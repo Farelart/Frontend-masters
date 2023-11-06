@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage</title>
+    <style>
+        .my-page-header {
+            background-color: red;
+            grid-area: nav-header;
+            padding: 10px;
+            height: 100px;
+        }
+
+        .my-page-body {
+            background-color: blue;
+            grid-area: main-body;
+            padding: 10px;
+            height: 600px;
+        }
+
+        .my-page-sidebar {
+            background-color: green;
+            grid-area: nav-side;
+            padding: 10px;
+        }
+
+        .my-page-footer {
+            background-color: yellow;
+            grid-area: footer;
+            padding: 10px;
+            height: 200px;
+        }
+
+        .my-page {
+            display: grid;
+            grid-template-columns: 10fr 10fr 1fr 10fr;
+            grid-template-areas: 
+                "nav-header nav-header nav-header nav-side"
+                "main-body  main-body  .          nav-side"
+                "footer     footer     footer     footer";
+
+        }
+    </style>
+</head>
+<body>
+    <div class="my-page">
+        <header class="my-page-header">the header</header>
+        <div class="my-page-body">the body</div>
+        <div class="my-page-sidebar">the sidebar</div>
+        <footer class="my-page-footer">the footer</footer>
+    </div>
+</body>
+</html>

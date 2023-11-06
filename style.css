@@ -1,0 +1,159 @@
+*{
+    box-sizing: border-box;
+}
+
+h3 {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+    font-weight: lighter;
+    font-size: small;
+    margin-top: 3px;
+    color: #504135;
+}
+
+hr {
+    border-color: #f8efc0;
+}
+
+legend {
+    color: #504135;
+}
+
+input[type=text] {
+    border: none;
+    background-color: #eee1d5;
+}
+
+fieldset {
+    padding: 10px;
+    border-radius: 27px;
+}
+
+.brand {
+    display: flex;
+    height: 3rem;
+    background-color: #442c1c;
+    color: #f8efc0;
+    font-size: 0.3rem;
+    font-family: "Open Sans";
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.main {
+    background-color: #eff0f0;
+}
+
+.big-section {
+    display: flex;
+    column-gap: 2rem;
+    padding-bottom: 80px;
+    padding-top: 20px;
+    font-family: "Open Sans";
+    font-size: 0.7rem;
+}
+
+.items-section {
+    flex: 1;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+ul {
+    list-style-position: outside;
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-areas: 
+        "num product      price"
+        ". product-type ."
+        ". product-type-2 .";
+}
+
+.li-num {
+    grid-area: num;
+}
+
+.li-product {
+    grid-area: product;
+}
+
+.li-price {
+    grid-area: price;
+}
+
+.li-product-type {
+    grid-area: product-type;
+}
+
+.li-product-type-2 {
+    grid-area: product-type-2;
+}
+
+.name-payment {
+    flex: 1;
+    margin-top: 15px;
+}
+
+.items {
+    background-color: #eee1d5;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 0.02rem;
+    border-radius: 5px;
+}
+
+.name {
+    background-color: #eee1d5;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 0.02rem;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.payment {
+    background-color: #eee1d5;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 0.02rem;
+    border-radius: 5px;
+}
+
+.last-last {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.place-order {
+    color: #442c1c;
+    background-color: #deb993;
+    border: none;
+    padding: 5px 22rem;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.table-order {
+    color: #442c1c;
+    margin-bottom: 0.8rem;
+}
+
+.table-order td {
+    padding: 0 3rem;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The News Times</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 30px;
+        }
+
+        .brand {
+            text-align: center;
+            font-family: "Snell Roundhand";
+        }
+
+        .main {
+            display: grid;
+            grid-template-areas: 
+                "main-nav  main-nav  main-nav"
+                "section-1 section-2 section-3"
+                "section-4 section-5 section-5";
+        }
+
+        .main-nav {
+            grid-area: main-nav;
+            border: 2px solid black;
+            margin: 0;
+            padding: 30px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: None;
+        }
+
+        a{
+            text-decoration: None;
+            font-family: Segoe UI;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgb(53, 43, 29);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h2{
+            font-weight: lighter;
+            font-style: italic;
+        }
+
+        .section-1 {
+            grid-area: section-1;
+            border-left: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .section-2 {
+            grid-area: section-2;
+            border-left: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+        }
+
+        img{
+            width: 200px;
+            height: 200px;
+        }
+
+        .section-3 {
+            grid-area: section-3;
+            border-left: 2px solid black;
+            border-right: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .section-4 {
+            grid-area: section-4;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .section-5 {
+            grid-area: section-5;
+            border-right: 2px solid black;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="brand">
+        <h1>The New Times</h1>
+    </header>
+
+    <main class="main">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="">Politics</a></li>
+                <li><a href="">Technology</a></li>
+                <li><a href="">Local</a></li>
+                <li><a href="">Opinion</a></li>
+                <li><a href="">Sports</a></li>
+            </ul>
+        </nav>
+
+        <section class="section-1">
+            <h2>Student Learns HTML</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quae, modi ullam autem assumenda pariatur. Qui, vel! Autem esse magni quod! Vero odit maiores, repellat minus ratione omnis tempora obcaecati nulla suscipit excepturi deleniti quae veritatis et labore accusantium adipisci!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat qui quibusdam a laborum est sequi consequuntur natus numquam, quos accusantium explicabo dolores praesentium consectetur inventore similique rerum aut illo! Maiores rem ipsam laborum est dolores odit eaque ad quibusdam?</p>
+        </section>
+
+        <section class="section-2">
+            <h2>BREAKING: Luna is Adorable</h2>
+            <img src="http://pets-images.dev-apis.com/pets/dog25.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quae illum cumque, maiores perspiciatis quibusdam eum praesentium laboriosam dignissimos doloremque!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad saepe aliquid a veniam corporis voluptatum vero suscipit, possimus minima laborum?</p>
+        </section>
+
+        <section class="section-3">
+            <h2>CSS IS Apparently a Thing</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae eligendi repellat architecto corporis vitae voluptates voluptas perspiciatis dolore debitis minus quaerat quisquam quam nisi esse iste fugit, perferendis itaque! Quam nemo molestiae odit neque ratione eum maxime repellat iste corrupti.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati perspiciatis libero rerum aspernatur labore quam eligendi quo qui! Facilis sed culpa at mollitia commodi non nam corporis omnis quasi expedita.</p>
+        </section>
+
+        <section class="section-4">
+            <h2>Between the Angle Brackets: The Brian Holt Scandal</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolor ex quas, iusto facere quae! Amet provident ducimus quae excepturi nulla sapiente, quisquam natus obcaecati voluptatem necessitatibus officia modi, omnis reprehenderit eveniet ipsum earum culpa magnam fugit alias illum. Quasi!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, expedita! Ad fuga libero tempora qui quo facilis vitae consequatur, praesentium similique sint autem maiores optio nobis voluptas eum amet rem tempore nostrum veniam commodi ea ex recusandae et perferendis? Laborum!</p>
+        </section>
+        <section class="section-5">
+            <h2>Scientist Invents New Miracle Drink: Coffee</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nesciunt praesentium, ullam ad mollitia reiciendis! Rerum ex fuga aspernatur consequuntur. Et provident perspiciatis voluptatibus repudiandae minima enim, laudantium magnam corporis inventore labore rerum optio debitis reprehenderit ratione eos. Expedita, maiores.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo voluptatum ducimus provident, fugiat placeat quis odit aspernatur dolor possimus facilis iste saepe illo unde impedit, esse assumenda recusandae rerum at. Alias veritatis vel vitae eius molestias beatae quidem dolorem minus!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eos accusamus libero cum odio fuga saepe. Fugiat ex adipisci suscipit porro veritatis hic blanditiis praesentium doloribus possimus necessitatibus, autem voluptatibus atque facilis enim amet libero velit iure, animi aspernatur commodi!</p>
+        </section>
+    </main>
+</body>
+</html>

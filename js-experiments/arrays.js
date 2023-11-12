@@ -36,7 +36,7 @@ const cities = [
     "San Francisco",
     "Salt Lake City",
     "Amsterdam",
-    "Hong Kong",
+    "Hong Kong",  
 ];
 
 for (let i= 0; i < cities.length; i++) {

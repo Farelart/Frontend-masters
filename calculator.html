@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .operations {
+            font-family: monospace;
+            font-size: 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: 
+                "scree scree scree scree"
+                "c     c     arrow division"
+                "seven eight nine  multiplication"
+                "four  five  six   substraction"
+                "one   two   three addition"
+                "zeros zeros zeros equality";
+
+            width: 40%;
+        }
+
+        button {
+            height: 8rem;
+            font-size: 2rem;
+            border: 1px solid black;
+        }
+
+        .numbers, .operation, .arrow {
+            width: 8rem;
+        }
+
+        .c {
+            width: 16rem;
+        }
+
+        .zero {
+            width: 24rem;
+        }
+
+        .operation {
+            background-color: #df974c;
+            color: white;
+        }
+
+        .numbers, .c, .arrow, .zero {
+            background-color: #d8d9db;
+            color: black;
+        }
+
+        .number-screen {
+            grid-area: scree;
+            height: 4rem;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .c {
+            grid-area: c;
+        }
+
+        .arrow {
+            grid-area: arrow;
+        }
+
+        .nine {
+            grid-area: nine;
+        }
+
+        .eight {
+            grid-area: eight;
+        }
+
+        .seven {
+            grid-area: seven;
+        }
+
+        .six {
+            grid-area: six;
+        }
+
+        .five {
+            grid-area: five;
+        }
+
+        .four {
+            grid-area: four;
+        }
+
+        .three {
+            grid-area: three;
+        }
+
+        .two {
+            grid-area: two;
+        }
+
+        .one {
+            grid-area: one;
+        }
+
+        .zero {
+            grid-area: zeros;
+        }
+
+        .division {
+            grid-area: division;
+        }
+
+        .multiplication {
+            grid-area: multiplication;
+        }
+
+        .substraction {
+            grid-area: substraction;
+        }
+
+        .addition {
+            grid-area: addition;
+        }
+
+        .equality {
+            grid-area: equality;
+        }
+    </style>
+</head>
+<body>
+    <section class="calculator">
+        <div class="operations">
+            <div class="number-screen">0</div>
+            <button class="diff c">C</button>
+            <button class="diff arrow">&#11013;</button>
+            <button class="num numbers nine">9</button>
+            <button class="num numbers eight">8</button>
+            <button class="num numbers seven">7</button>
+            <button class="num numbers six">6</button>
+            <button class="num numbers five">5</button>
+            <button class="num numbers four">4</button>
+            <button class="num numbers three">3</button>
+            <button class="num numbers two">2</button>
+            <button class="num numbers one">1</button>
+            <button class="num diff zero">0</button>
+            <button class="op operation division">&divide;</button>
+            <button class="op operation multiplication">&times;</button>
+            <button class="op operation substraction">-</button>
+            <button class="op operation addition">+</button>
+            <button class="operation equality">=</button>
+        </div>
+    </section>
+    <script>
+        let currentInput = '';
+        let firstOperand = '';
+        let secondOperand = '';
+        let operator = '';
+        let secondInput = '';
+        const screen = document.querySelector(".number-screen");
+        const buttonClear = document.querySelector(".c");
+        console.log(buttonClear);
+        buttonClear.addEventListener("click", function(event) {
+            screen.innerText = 0;
+            currentInput = ''
+        })
+
+        function calculate(first, operator, second) {
+            switch(operator) {
+                case '+':
+                    return first + second;
+                case '-':
+                    return first - second;
+                case '*':
+                    return first * second;
+                case '&divide;':
+                    if (second === 0) {
+                        return 'Error: Division by zero'
+                    }
+                    return first / second;
+                default:
+                    return 'Error'
+            }
+        }
+
+        const numberButtons = document.querySelectorAll(".num");
+        numberButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                currentInput += button.textContent;
+                screen.textContent = currentInput;
+            });
+        });
+
+        const operationButtons = document.querySelectorAll(".op");
+        operationButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                if (currentInput !== '') {
+                    if (firstOperand === '') {
+                        firstOperand = parseFloat(currentInput);
+                        operator = button.textContent;
+                        currentInput = '';
+                    } else if (secondOperand === '') {
+                        secondOperand = parseFloat(currentInput);
+                        let result = calculate(firstOperand, operator, secondOperand);
+                        screen.textContent = result;
+                        firstOperand = result;
+                        operator = button.textContent;
+                        currentInput = '';
+                        secondOperand = '';
+                    }
+                }
+            });
+        });
+
+        const equalButton = document.querySelector(".equality");
+        equalButton.addEventListener("click", function() {
+            if (firstOperand !== '' && operator !== '' && currentInput !== '') {
+                secondOperand = parseFloat(currentInput);
+                let result = calculate(firstOperand, operator, secondOperand);
+                screen.textContent = result;
+                firstOperand = result;
+                operator = '';
+                currentInput = '';
+                secondOperand = '';
+            }
+        });
+    </script>
+</body>
+</html>
